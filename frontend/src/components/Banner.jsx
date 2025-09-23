@@ -1,5 +1,6 @@
 import React from 'react'
 import shoe5 from '../assets/shoe5.png'
+import strap from '../assets/strap.png'
 import { motion } from 'framer-motion'
 
 const Banner = () => {
@@ -70,13 +71,14 @@ const Banner = () => {
             </div>
 
             {/* =================== right box ===================== */}
-            <div className='sm:w-[622px] sm:h-[622px]'>
+            <div className='sm:w-[622px] sm:h-[622px] relative'>
+                <img src={strap} className='sm:h-[622px] h-auto'/>
                 <motion.img
                     initial={{ opacity: 0, y: -100 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    src={shoe5} className='object-cover' />
+                    src={shoe5} className='absolute inset-0 object-cover' />
             </div>
         </div>
     )
