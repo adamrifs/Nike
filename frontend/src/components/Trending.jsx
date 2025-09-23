@@ -2,6 +2,7 @@ import React from 'react'
 import trending1 from '../assets/trending1.png'
 import trending2 from '../assets/trending2.png'
 import trending3 from '../assets/trending3.png'
+import { motion } from 'framer-motion'
 
 const Trending = () => {
     return (
@@ -14,7 +15,12 @@ const Trending = () => {
                     {/* overlay */}
                     <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent'></div>
                     {/* buttons */}
-                    <div className='absolute sm:top-10 sm:left-10 top-10 left-5 sm:w-[487px] w-[calc(100%-2rem)] h-auto'>
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: 'easeOut' }}
+                        viewport={{ once: true }}
+                        className='absolute sm:top-10 sm:left-10 top-10 left-5 sm:w-[487px] w-[calc(100%-2rem)] h-auto'>
                         <h1 className='font-bold sm:text-[56px] text-3xl text-white'>
                             React Presto
                         </h1>
@@ -24,7 +30,7 @@ const Trending = () => {
                         <button className='sm:py-3 sm:px-10 py-2 px-6 mt-5 rounded-3xl bg-white text-black font-semibold hover:bg-black hover:text-white transition duration-300 ease-in-out active:scale-95'>
                             Shop Now
                         </button>
-                    </div>
+                    </motion.div>
 
                 </div>
                 {/* card 2 ==================================== */}
@@ -32,12 +38,25 @@ const Trending = () => {
                     <img src={trending2} className='w-[100%] h-[100%] object-cover' />
                     {/* overlay */}
                     <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent'></div>
+                    <motion.h4
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: 'easeOut' }}
+                        viewport={{ once: true }}
+                        className='absolute bottom-5 left-5 text-white font-semibold'>Summer Must-Haves: Air Max Dia</motion.h4>
                 </div>
+
                 {/* card 3 ====================================== */}
                 <div className='bg-red-400  h-[444px] relative'>
                     <img src={trending1} className='w-[100%] h-[100%] object-cover' />
                     {/* overlay */}
                     <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent'></div>
+                    <motion.h4
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: 'easeOut' }}
+                        viewport={{ once: true }}
+                        className='absolute bottom-5 left-5 text-white font-semibold'>Air Jorden 11 Retro Low LE</motion.h4>
                 </div>
             </div>
         </div>
