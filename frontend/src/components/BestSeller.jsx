@@ -6,13 +6,13 @@ import { motion } from 'framer-motion'
 const BestSeller = () => {
 
     return (
-        <div className='h-[682px] flex flex-col items-center justify-center relative'>
-            <h2 className='font-medium text-[24px] text-left w-full sm:pl-22 pl-5'>Best of Air Max</h2>
+        <div className=' flex flex-col items-center justify-center relative'>
+            <h2 className='font-medium text-[24px] text-left w-full sm:pl-22 pl-5 pt-5'>Best of Air Max</h2>
 
             {/* product card container */}
-            <div className='h-[520px]  sm:w-[1344px] w-[100vw] mt-5 flex flex-wrap sm:justify-between justify-center sm:gap-0 gap-8'>
+            <div className='h-auto  sm:w-[1344px] w-[100vw] mt-5 flex flex-wrap sm:justify-between justify-center sm:gap-0 gap-8'>
                 {/* card */}
-                {
+                 {
                     bestSeller.map((item, index) => (
                         <motion.div className='sm:w-[432px] sm:h-[520px] h-[520px] w-[390px]  flex flex-col gap-2 relative' key={index}
                             initial={{ opacity: 0, x: 100 }}
@@ -37,10 +37,6 @@ const BestSeller = () => {
                         </motion.div>
                     ))
                 }
-
-
-
-
             </div>
         </div>
     )
