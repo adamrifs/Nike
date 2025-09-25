@@ -2,8 +2,10 @@ import React from 'react'
 import shoe5 from '../assets/shoe5.png'
 import strap from '../assets/strap.png'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 const Banner = () => {
+    const nav = useNavigate()
     const heading = 'Nike React Presto by you'
     const hWord = heading.split(" ")
 
@@ -67,12 +69,13 @@ const Banner = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    className='font-medium sm:text-base text-sm sm:w-[190px] w-[150px] py-[14px] px-[24px]  sm:mx-0 rounded-[30px] text-white bg-black mt-4'>Shop Now</motion.button>
+                    onClick={() => nav('/productListing')}
+                    className='font-medium sm:text-base text-sm sm:w-[190px] w-[150px] py-[14px] px-[24px]  sm:mx-0 rounded-[30px] text-white bg-black mt-4 cursor-pointer'>Shop Now</motion.button>
             </div>
 
             {/* =================== right box ===================== */}
             <div className='sm:w-[622px] sm:h-[622px] relative'>
-                <img src={strap} className='sm:h-[622px] h-auto'/>
+                <img src={strap} className='sm:h-[622px] h-auto' />
                 <motion.img
                     initial={{ opacity: 0, y: -100 }}
                     whileInView={{ opacity: 1, y: 0 }}

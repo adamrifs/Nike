@@ -3,8 +3,10 @@ import trending1 from '../assets/trending1.png'
 import trending2 from '../assets/trending2.png'
 import trending3 from '../assets/trending3.png'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 const Trending = () => {
+    const nav = useNavigate()
     return (
         <div className=' relative'>
             <h2 className='font-medium text-[24px] text-left w-full sm:pl-22 pl-5 pt-5'>Trending Now</h2>
@@ -27,7 +29,9 @@ const Trending = () => {
                         <p className='font-normal sm:text-xl text-white'>
                             With React foam for the most comfortable Presto ever.
                         </p>
-                        <button className='sm:py-3 sm:px-10 py-2 px-6 mt-5 rounded-3xl bg-white text-black font-semibold hover:bg-black hover:text-white transition duration-300 ease-in-out active:scale-95'>
+                        <button
+                        onClick={() => nav('/productListing')}
+                         className='sm:py-3 sm:px-10 py-2 px-6 mt-5 cursor-pointer rounded-3xl bg-white text-black font-semibold hover:bg-black hover:text-white transition duration-300 ease-in-out active:scale-95'>
                             Shop Now
                         </button>
                     </motion.div>

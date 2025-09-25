@@ -2,8 +2,10 @@ import React from 'react'
 import landing from '../assets/landing.png'
 import shoe from '../assets/shoe.png'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 const Hero = () => {
+    const nav = useNavigate()
     const heading = "Style That Moves With You."
     const paragraph = "Not just style. Not just comfort. Footwear that effortlessly moves with your every step."
     const pWords = paragraph.split(" ")
@@ -70,7 +72,8 @@ const Hero = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
                     viewport={{ once: true }}
-                    className='font-medium sm:text-base text-sm sm:w-[190px] w-[150px] py-[14px] px-[24px] mx-3 sm:mx-0 rounded-[30px] text-white bg-black'>Find Your Shoe</motion.button>
+                    onClick={() => nav('/productListing')}
+                    className='font-medium sm:text-base text-sm sm:w-[190px] w-[150px] py-[14px] px-[24px] mx-3 sm:mx-0 rounded-[30px] text-white bg-black cursor-pointer border border-black hover:bg-transparent hover:text-black '>Find Your Shoe</motion.button>
             </div>
 
             {/* landing right box */}
