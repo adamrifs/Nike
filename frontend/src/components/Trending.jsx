@@ -7,6 +7,10 @@ import { useNavigate } from 'react-router-dom'
 
 const Trending = () => {
     const nav = useNavigate()
+    const gotoProductList = () => {
+        nav('/productListing')
+        window.scrollTo(0, 0)
+    }
     return (
         <div className=' relative'>
             <h2 className='font-medium text-[24px] text-left w-full sm:pl-22 pl-5 pt-5'>Trending Now</h2>
@@ -30,8 +34,8 @@ const Trending = () => {
                             With React foam for the most comfortable Presto ever.
                         </p>
                         <button
-                        onClick={() => nav('/productListing')}
-                         className='sm:py-3 sm:px-10 py-2 px-6 mt-5 cursor-pointer rounded-3xl bg-white text-black font-semibold hover:bg-black hover:text-white transition duration-300 ease-in-out active:scale-95'>
+                            onClick={gotoProductList}
+                            className='sm:py-3 sm:px-10 py-2 px-6 mt-5 cursor-pointer rounded-3xl bg-white text-black font-semibold hover:bg-black hover:text-white transition duration-300 ease-in-out active:scale-95'>
                             Shop Now
                         </button>
                     </motion.div>

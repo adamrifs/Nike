@@ -6,6 +6,10 @@ import { useNavigate } from 'react-router-dom'
 
 const Banner = () => {
     const nav = useNavigate()
+    const gotoProductList = () => {
+        nav('/productListing')
+        window.scrollTo(0, 0)
+    }
     const heading = 'Nike React Presto by you'
     const hWord = heading.split(" ")
 
@@ -69,7 +73,7 @@ const Banner = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    onClick={() => nav('/productListing')}
+                    onClick={gotoProductList}
                     className='font-medium sm:text-base text-sm sm:w-[190px] w-[150px] py-[14px] px-[24px]  sm:mx-0 rounded-[30px] text-white bg-black mt-4 cursor-pointer'>Shop Now</motion.button>
             </div>
 

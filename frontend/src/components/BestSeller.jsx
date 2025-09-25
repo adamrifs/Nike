@@ -7,6 +7,10 @@ import { useNavigate } from 'react-router-dom'
 const BestSeller = () => {
     const nav = useNavigate()
 
+    const goToProductList = () => {
+        nav('/productListing')
+        window.scrollTo(0, 0)
+    }
     return (
         <div className=' flex flex-col items-center justify-center relative'>
             <h2 className='font-medium text-[24px] text-left w-full sm:pl-22 pl-5 pt-5'>Best of Air Max</h2>
@@ -26,7 +30,7 @@ const BestSeller = () => {
                             </div>
                             <div className='sm:w-[432px] sm:h-[432px] h-[520px] w-[390px] overflow-hidden rounded-[4px]'>
                                 <img src={item.image} className='w-full h-full cursor-pointer hover:scale-105 transition object-cover'
-                                 onClick={() =>nav('/productListing')} />
+                                    onClick={goToProductList} />
                             </div>
 
                             <div className='h-[76px] '>

@@ -5,9 +5,15 @@ import FilterDropDown from '../components/FilterDropDown';
 import shoe2 from '../assets/shoe2.png'
 import { shoesList } from '../constants/Data';
 import { PiSlidersHorizontalFill } from "react-icons/pi";
+import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const ProductListing = () => {
-
+    const nav = useNavigate()
+    const gotoProductDetail = () => {
+        nav('/productDetail')
+        window.scrollTo(0, 0)
+    }
     return (
         <div>
             <Navbar />
@@ -54,7 +60,9 @@ const ProductListing = () => {
                                 <p className='font-medium sm:text-base text-[10px] text-[#007D48]'>{shoe.offer}</p>
                             </div>
                             <div className='sm:w-[348px] w-[130px] sm:h-[348px] h-[120px] rounded-[4px] overflow-hidden'>
-                                <img src={shoe.image} className='w-full h-full object-cover hover:scale-105 transition duration-300 ease-in-out' />
+                                <img src={shoe.image}
+                                    onClick={gotoProductDetail}
+                                    className='w-full h-full object-cover hover:scale-105 transition duration-300 ease-in-out' />
                             </div>
                             <div className='flex justify-between my-2'>
                                 <h2 className='sm:text-base text-[11px] font-medium'>{shoe.name}</h2>
@@ -67,6 +75,7 @@ const ProductListing = () => {
 
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
